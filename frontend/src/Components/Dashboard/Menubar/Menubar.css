@@ -1,0 +1,69 @@
+.menu-wrapper{
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+    height: 60px;
+    box-shadow: 0 4px 10px -4px rgb(145, 145, 145);
+    
+    
+}
+h1{
+    margin: 0;
+    padding: 0;
+}
+
+.menubar-items{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 94%;
+    height: 100%;
+    margin: 0 auto;
+    /* background-color: blue; */
+
+}
+.menu-left{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+}
+.menu-right{
+    display: flex;
+    /* background-color: aqua; */
+    align-items: center;
+    justify-content: center;
+}
+.menu-items{
+    display: flex;
+    /* background-color: rgb(161, 75, 75); */
+    gap: 2rem;
+    align-items: center;
+    justify-content: center;
+}
+.menu-search{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(255, 255, 255);
+    width: 300px;
+    padding: .2rem 1rem;
+    border-radius: 5px;
+    box-shadow: 0 0 10px -5px #000000;
+}
+.search{
+    width: 90%;
+}
+.search input{
+    padding: .4rem 0;
+    border: transparent;
+    background: transparent;
+}
+.search input:focus{
+    outline: none;
+    background: transparent;
+}
+.menu-logo h1{
+    font-family: 'Merriweather', serif;
+    font-size: 1.6rem;
+   
+}

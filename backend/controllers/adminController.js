@@ -9,7 +9,7 @@ const db = require('../database/db');
 module.exports = {
 
 
-
+//this module is for super admin sign in
     adminLogin: async (req, res, next) => {
 
       

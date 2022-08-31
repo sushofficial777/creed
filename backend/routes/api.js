@@ -4,10 +4,11 @@ const userController = require('../controllers/userController');
 const adminController = require('../controllers/adminController');
 
 // admin add user
-router.post('/adduser',userController.addadmin);
+router.post('/adduser',userController.adduser);
+router.get('/getmanager',userController.getuserdata);
 
 //admin login
-router.post('/login',adminController.adminLogin);
+router.post('/login',userController.userLogin);
 router.post('/add',adminController.addData);
 
 

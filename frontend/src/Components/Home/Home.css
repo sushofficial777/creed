@@ -1,0 +1,11 @@
+.home-wrapper{
+   background-color: rgb(255, 255, 255);
+   margin: 0 auto;
+   margin-left: 270px;
+   margin-top: 14px;
+   width: 81%;
+}
+.widgets{
+    display: flex;
+    gap: 2rem;
+}
