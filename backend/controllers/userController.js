@@ -9,11 +9,13 @@ module.exports = {
 
     userLogin: async (req, res, next) => {
 
-        const { email, password } = req.body;
+        try{
+            const { email, password } = req.body;
         const matchPass = md5(password);
 
         const UserData = await user.findOne({ email: email });
 
+       
 
         if (!email || !password) {
             res.status(400).json({ error: "plaese fill all data" });
@@ -32,33 +34,78 @@ module.exports = {
             const token = sign({ email: email }, process.env.ADMIN_SECRET_KEY);
             res.cookie('jwt', token);
 
-
-
-
-
-
             return res.status(200).json({ message: "you are successfully logged-in" });
-
 
             next();
         }
+    }catch(err){
+        console.log(`err : ${err}`);
+        res.status(400).json({
+            err:"error during find data"
+        })
+    }
 
     },
-    //////////////////////////////////////////////////////////
-
-
+    //////////////////get all user data////////////////////////
 
     getuserdata: async (req, res, next) => {
 
-        const Data  = await user.find({"role":"superadmin"});
+        const Data  = await user.find();
 
-        res.send(Data)
-
-      
- 
-
+        res.status(200).json({
+            message:"data found",
+            data: Data
+           })
 
     },
+
+      //////////////////get all manager data////////////////////////
+
+       GetManagerData: async (req, res, next) => {
+
+        const Data  = await user.find({"role": "manager"});
+
+       res.status(200).json({
+        message:"data found",
+        data: Data
+       })
+
+    },
+
+        //////////////////get all teamlead data////////////////////////
+
+        GetTeamleadData: async (req, res, next) => {
+
+            const Data  = await user.find({"role":"teamleader"});
+    
+           res.status(200).json({
+            message:"data found",
+            data: Data
+           })
+    
+        },
+   //////////////////get all employee data////////////////////////
+        GetEmployeeData: async (req, res, next) => {
+
+            const Data  = await user.find({"role":"employee"});
+    
+           res.status(200).json({
+            message:"data found",
+            data: Data
+           })
+    
+        },
+   //////////////////get all deparment data////////////////////////
+        GetDepartmentData: async (req, res, next) => {
+
+            const Data  = await user.find();
+    
+           res.status(200).json({
+            message:"data found",
+            data: Data
+           })
+    
+        },
     adduser: async (req, res, next) => {
 
 

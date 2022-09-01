@@ -5,14 +5,16 @@ const adminController = require('../controllers/adminController');
 
 // admin add user
 router.post('/adduser',userController.adduser);
-router.get('/getmanager',userController.getuserdata);
+router.get('/getalluserdata',userController.getuserdata);
 
 //admin login
 router.post('/login',userController.userLogin);
 router.post('/add',adminController.addData);
 
-
-
+// fetching data
+router.get('/getmanager',userController.GetManagerData);
+router.get('/getteamlead',userController.GetTeamleadData);
+router.get('/getemployee',userController.GetEmployeeData);
 
 
 module.exports = router;
