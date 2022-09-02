@@ -1,20 +1,66 @@
-import React from 'react';
+import React,{useEffect,useState} from 'react';
 import './widges.css';
 import {RiTeamLine} from 'react-icons/ri';
 
 const Widges = ({type}) => {
     let data;
 
+    const [manager, setManager] = useState("0");
+    const [teamlead, setTeamlead] = useState("0");
+    const [employee, setEmployee] = useState("0");
+
+    console.log(manager.data);
+    const fetchManager = () => {
+        fetch('/countmanager').then((res) => {
+            // console.log(res);
+            return res.json();
+
+        }).then((managerData) => {
+            const managerCount = managerData;
+            setManager(managerCount);
+           
+        })
+    }
+
+    const fetchTeamlead = () => {
+      fetch('/countteamlead').then((res) => {
+        
+          return res.json();
+
+      }).then((teamleadData) => {
+          const teamleadCount = teamleadData;
+          setTeamlead(teamleadCount);
+         
+      })
+  }
+
+  const fetchEmployee = () => {
+    fetch('/countemployee').then((res) => {
+      
+        return res.json();
+
+    }).then((employeeData) => {
+        const employeeCount = employeeData;
+        setEmployee(employeeCount);
+       
+    })
+}
+
+    useEffect(() => {
+      fetchEmployee();
+      fetchTeamlead();
+        fetchManager();
+    }, [])
   //temporary
-  const amount = 100;
+
   const diff = 20;
 
   switch (type) {
-    case "user":
+    case "manager":
       data = {
-        title: "USERS",
-        isMoney: false,
-        link: "See all users",
+        title: "MANAGERS",
+        count:manager.data,
+        link: "See all manager",
         icon: (
           <RiTeamLine
             className="icon"
@@ -26,11 +72,11 @@ const Widges = ({type}) => {
         ),
       };
       break;
-    case "order":
+    case "teamlead":
       data = {
-        title: "ORDERS",
-        isMoney: false,
-        link: "View all orders",
+        title: "TEAMLEADERS",
+        count:teamlead.data,
+        link: "See all teamleaders",
         icon: (
           <RiTeamLine
             className="icon"
@@ -42,11 +88,11 @@ const Widges = ({type}) => {
         ),
       };
       break;
-    case "earning":
+    case "employee":
       data = {
-        title: "EARNINGS",
-        isMoney: true,
-        link: "View net earnings",
+        title: "EMPLOYEES",
+        count:employee.data,
+        link: "See all employees",
         icon: (
           <RiTeamLine
             className="icon"
@@ -55,11 +101,11 @@ const Widges = ({type}) => {
         ),
       };
       break;
-    case "balance":
+    case "department":
       data = {
-        title: "BALANCE",
-        isMoney: true,
-        link: "See details",
+        title: "DEPARTMENT",
+      count:employee.data,
+        link: "See all departments",
         icon: (
           <RiTeamLine
             className="icon"
@@ -80,13 +126,13 @@ const Widges = ({type}) => {
       <div className="left">
         <span className="title">{data.title}</span>
         <span className="counter">
-          {data.isMoney && "$"} {amount}
+          {data.count}
         </span>
         <span className="link">{data.link}</span>
       </div>
       <div className="right">
         <div className="percentage positive">
-          <RiTeamLine />
+        
           {diff} %
         </div>
         {data.icon}

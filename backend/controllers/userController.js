@@ -106,6 +106,45 @@ module.exports = {
            })
     
         },
+
+
+      //////////////////get all manager data////////////////////////
+
+      CountManagerData: async (req, res, next) => {
+
+        const Data  = await user.find({"role": "manager"}).count();
+
+      return res.send(Data);
+
+    },
+
+        //////////////////get all teamlead data////////////////////////
+
+        CountTeamleadData: async (req, res, next) => {
+
+            const Data  = await user.find({"role":"teamleader"}).count();
+    
+            return res.send(Data);
+    
+        },
+   //////////////////get all employee data////////////////////////
+        CountEmployeeData: async (req, res, next) => {
+
+            const Data  = await user.find({"role":"employee"}).count();
+    
+            return res.send(Data);
+    
+        },
+   //////////////////get all deparment data////////////////////////
+        CountDepartmentData: async (req, res, next) => {
+
+            const Data  = await user.find().count;
+    
+            return res.send(Data);
+    
+        },
+
+
     adduser: async (req, res, next) => {
 
 

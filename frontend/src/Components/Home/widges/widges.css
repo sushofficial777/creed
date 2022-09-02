@@ -8,11 +8,19 @@
     border-radius: 10px;
     height: 100px;
 }
-    .left,
-    .right {
+.widget .left{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+      
+  .widget  .right {
       display: flex;
       flex-direction: column;
       justify-content: space-between;
+      align-items: flex-end;
+      /* background-color: aqua; */
     }
   
       .title {

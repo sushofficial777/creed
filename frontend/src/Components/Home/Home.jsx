@@ -7,10 +7,10 @@ const Home = () => {
        <>
        <div className="home-wrapper">
        <div className="widgets">
-          <Widges type="user" />
-          <Widges type="order" />
-          <Widges type="earning" />
-          <Widges type="balance" />
+          <Widges type="manager" />
+          <Widges type="teamlead" />
+          <Widges type="employee" />
+          <Widges type="department" />
         </div>
        </div>
        
