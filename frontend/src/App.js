@@ -1,10 +1,11 @@
 import logo from './logo.svg';
 import './App.css';
-import Login from './Components/Login/Login';
+import Login from './Components/pages/Login/Login';
 import { BrowserRouter as Router, Routes, Route, useNavigate } from 'react-router-dom';
 import Dashboard from './Components/Dashboard/Dashboard';
-import Manager from './Components/Manager/Manager';
-import NewManager from './Components/Manager/NewManager/NewManager';
+import Manager from './Components/pages/Manager/Manager';
+import NewManager from './Components/pages/Manager/NewManager/NewManager';
+import NewEmployee from './Components/pages/Employee/NewEmployee/NewEmployee'
 
 
 const App =() => {
@@ -17,6 +18,7 @@ const App =() => {
       <Route exact path="/admin/Dashboard" element=<Dashboard/> />
       <Route exact path="/admin/Dashboard/managers" element=<Manager/> />
       <Route exact path="/admin/Dashboard/managers/new" element=<NewManager/> />
+      <Route exact path="/admin/Dashboard/employee/new" element=<NewEmployee/> />
       
       {/* <Route exact path="/admin/Dashboard/user" element={<ProtectedRoute Component={User} />} />
       <Route exact path="/admin/sign-out" element={<ProtectedRoute Component={} />} />

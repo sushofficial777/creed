@@ -114,7 +114,10 @@ module.exports = {
 
         const Data  = await user.find({"role": "manager"}).count();
 
-      return res.send(Data);
+        res.status(200).json({
+            message:"data found",
+            data: Data
+           })
 
     },
 
@@ -124,7 +127,10 @@ module.exports = {
 
             const Data  = await user.find({"role":"teamleader"}).count();
     
-            return res.send(Data);
+            res.status(200).json({
+                message:"data found",
+                data: Data
+               })
     
         },
    //////////////////get all employee data////////////////////////
@@ -132,7 +138,10 @@ module.exports = {
 
             const Data  = await user.find({"role":"employee"}).count();
     
-            return res.send(Data);
+            res.status(200).json({
+                message:"data found",
+                data: Data
+               })
     
         },
    //////////////////get all deparment data////////////////////////
@@ -140,7 +149,10 @@ module.exports = {
 
             const Data  = await user.find().count;
     
-            return res.send(Data);
+            res.status(200).json({
+                message:"data found",
+                data: Data
+               })
     
         },
 

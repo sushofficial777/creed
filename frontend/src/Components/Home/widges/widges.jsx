@@ -21,14 +21,13 @@ const Widges = ({type}) => {
            
         })
     }
-
-    const fetchTeamlead = () => {
+    const fetchTeamleader = () => {
       fetch('/countteamlead').then((res) => {
-        
+          // console.log(res);
           return res.json();
 
       }).then((teamleadData) => {
-          const teamleadCount = teamleadData;
+          const teamleadCount =teamleadData;
           setTeamlead(teamleadCount);
          
       })
@@ -36,7 +35,7 @@ const Widges = ({type}) => {
 
   const fetchEmployee = () => {
     fetch('/countemployee').then((res) => {
-      
+        // console.log(res);
         return res.json();
 
     }).then((employeeData) => {
@@ -45,10 +44,12 @@ const Widges = ({type}) => {
        
     })
 }
+    
+
 
     useEffect(() => {
-      fetchEmployee();
-      fetchTeamlead();
+    fetchTeamleader();
+    fetchEmployee();
         fetchManager();
     }, [])
   //temporary
@@ -104,7 +105,7 @@ const Widges = ({type}) => {
     case "department":
       data = {
         title: "DEPARTMENT",
-      count:employee.data,
+      count:manager.data,
         link: "See all departments",
         icon: (
           <RiTeamLine

@@ -12,7 +12,7 @@ import {HiOutlineOfficeBuilding} from 'react-icons/hi'
 
 import {MdOutlineCancel} from 'react-icons/md'
 import {FiMenu} from 'react-icons/fi'
-import Image1 from '../../img/img4.jpg'
+import Image1 from '../img/img4.jpg'
 
 const Sidebar = () => {
 

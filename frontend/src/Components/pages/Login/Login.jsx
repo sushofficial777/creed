@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import './Login.css'
-import Image1 from '../img/img14.png';
+import Image1 from '../../img/img4.jpg';
 import { useNavigate } from 'react-router-dom'
 
 
