@@ -6,6 +6,8 @@ import Dashboard from './Components/Dashboard/Dashboard';
 import Manager from './Components/pages/Manager/Manager';
 import NewManager from './Components/pages/Manager/NewManager/NewManager';
 import NewEmployee from './Components/pages/Employee/NewEmployee/NewEmployee'
+import NewTeamLead from './Components/pages/TeamLead/NewTeamLead/NewTeamLead';
+import NewDepartment from './Components/pages/Department/NewDepartment/NewDepartment';
 
 
 const App =() => {
@@ -18,6 +20,8 @@ const App =() => {
       <Route exact path="/admin/Dashboard" element=<Dashboard/> />
       <Route exact path="/admin/Dashboard/managers" element=<Manager/> />
       <Route exact path="/admin/Dashboard/managers/new" element=<NewManager/> />
+      <Route exact path="/admin/Dashboard/teamlead/new" element=<NewTeamLead/> />
+      <Route exact path="/admin/Dashboard/department/new" element=<NewDepartment/> />
       <Route exact path="/admin/Dashboard/employee/new" element=<NewEmployee/> />
       
       {/* <Route exact path="/admin/Dashboard/user" element={<ProtectedRoute Component={User} />} />
