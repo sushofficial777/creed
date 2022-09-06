@@ -11,8 +11,9 @@ require('dotenv').config();
 require('./database/db');
 const userRouter = require('./routes/api');
 
+
 //api doc with swagger
-app.use('/apiDoc', SwaggerDoc.serve);
+app.use('/apiDocjj', SwaggerDoc.serve);
 app.use('/apiDoc', SwaggerDoc.setup(swaggerDocumantation))
 
 app.use(express.json());

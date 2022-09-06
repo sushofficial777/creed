@@ -11,7 +11,7 @@ const Graph = () => {
       <div className="graph-wrapper">
         <div className="graph">
          <div className="section1">
-            
+            fgmfmklgm
 
          </div>
         </div>
