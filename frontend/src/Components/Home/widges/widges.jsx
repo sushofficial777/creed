@@ -134,7 +134,7 @@ const Widges = ({type}) => {
       <div className="right">
         <div className="percentage positive">
         
-          {diff} %
+        
         </div>
         {data.icon}
       </div>

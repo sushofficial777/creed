@@ -8,6 +8,7 @@ import {FaUserTie} from 'react-icons/fa';
 import {RiTeamLine} from 'react-icons/ri';
 import {AiOutlineTeam} from 'react-icons/ai'
 import {HiOutlineOfficeBuilding} from 'react-icons/hi'
+import {GrGraphQl} from 'react-icons/gr'
 
 
 import {MdOutlineCancel} from 'react-icons/md'
@@ -43,6 +44,7 @@ const Sidebar = () => {
 
              </div>
             <ul className="sidebar-menu-items">
+            <li className="sidebar-menu-item"><div className="sidebar-menu-icon"><GrGraphQl/></div><div className="sidebar-menu-title"><Link to="/admin/Graph"><h5>Graph</h5></Link></div></li>
                 <li className="sidebar-menu-item"><div className="sidebar-menu-icon"><MdSpaceDashboard/></div><div className="sidebar-menu-title"><Link to="/admin/Dashboard"><h5>Dashboard</h5></Link></div></li>
                 <li className="sidebar-menu-item"><div className="sidebar-menu-icon"><FaUserTie/></div><div className="sidebar-menu-title"><Link to="/admin/Dashboard/managers"><h5>Managers</h5></Link></div></li>
                 <li className="sidebar-menu-item"><div className="sidebar-menu-icon"><AiOutlineTeam/></div><div className="sidebar-menu-title"><Link to="/admin/Dashboard/teamleads"><h5>Team Leaders</h5></Link></div></li>

@@ -8,6 +8,8 @@ import NewManager from './Components/pages/Manager/NewManager/NewManager';
 import NewEmployee from './Components/pages/Employee/NewEmployee/NewEmployee'
 import NewTeamLead from './Components/pages/TeamLead/NewTeamLead/NewTeamLead';
 import NewDepartment from './Components/pages/Department/NewDepartment/NewDepartment';
+import Employee from './Components/pages/Employee/Employee';
+import Graph from './Components/pages/Graph/Graph';
 
 
 const App =() => {
@@ -18,11 +20,13 @@ const App =() => {
 
       <Route exact path="/" element=<Login/> />
       <Route exact path="/admin/Dashboard" element=<Dashboard/> />
+      <Route exact path="/admin/Graph" element=<Graph/> />
       <Route exact path="/admin/Dashboard/managers" element=<Manager/> />
+      <Route exact path="/admin/Dashboard/employees" element=<Employee/> />
       <Route exact path="/admin/Dashboard/managers/new" element=<NewManager/> />
-      <Route exact path="/admin/Dashboard/teamlead/new" element=<NewTeamLead/> />
-      <Route exact path="/admin/Dashboard/department/new" element=<NewDepartment/> />
-      <Route exact path="/admin/Dashboard/employee/new" element=<NewEmployee/> />
+      <Route exact path="/admin/Dashboard/teamleads/new" element=<NewTeamLead/> />
+      <Route exact path="/admin/Dashboard/departments/new" element=<NewDepartment/> />
+      <Route exact path="/admin/Dashboard/employees/new" element=<NewEmployee/> />
       
       {/* <Route exact path="/admin/Dashboard/user" element={<ProtectedRoute Component={User} />} />
       <Route exact path="/admin/sign-out" element={<ProtectedRoute Component={} />} />

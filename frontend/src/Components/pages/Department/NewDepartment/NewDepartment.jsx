@@ -18,9 +18,7 @@ const NewDepartment = () => {
         value = e.target.value;
 
         setUser({...user, [name]:value});
-     
     }
-
     const sendData = async (e)=>{
         e.preventDefault();
 
@@ -36,7 +34,6 @@ const NewDepartment = () => {
             })
 
         })
-
         const data = await res.json();
 
         if(res.status === 400 || !data){
@@ -51,9 +48,7 @@ const NewDepartment = () => {
             window.alert('user created')
             console.log("user created");
         }
-
     }
-
 
     const [file, setFile] = useState("");
 
@@ -97,13 +92,11 @@ const NewDepartment = () => {
 
                         <div className="field">
                             <div className="input"><button onClick={sendData}>Submit</button></div>
+
                         </div>
                     </div>
                 </form>
             </div>
-
-
-
         </>
     );
 }

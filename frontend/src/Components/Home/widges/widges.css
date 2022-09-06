@@ -25,7 +25,7 @@
   
       .title {
         font-weight: bold;
-        font-size: 14px;
+        font-size: 14px !important;
         color: rgb(160, 160, 160);
       }
   
@@ -36,7 +36,7 @@
   
       .link {
         width: max-content;
-        font-size: 12px;
+        font-size: 12px !important;
         border-bottom: 1px solid gray;
       }
   
@@ -54,8 +54,8 @@
       
   
       .icon {
-        font-size: 18px;
-        padding: 5px;
+        font-size: 25px!important;
+        padding: 5px!important;
         border-radius: 5px;
         align-self: flex-end;
       }

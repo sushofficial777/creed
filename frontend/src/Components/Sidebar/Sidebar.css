@@ -37,13 +37,16 @@
     display: flex;
     flex-direction: column;
     color: rgb(87, 87, 87);
+    
 
 }
 .user-detail h3{
     font-size: .8rem;
+   
 }
 .user-detail h2{
     font-size: 1rem;
+   
 }
 .user-account-sidebar img{
     width: 60px;
@@ -53,9 +56,10 @@
     box-shadow: 0 4px 5px -3px #000000;
 }
 h2,h3{
-    margin: 0;
-    padding: 0;
+    margin: 0!important;
+    padding: 0!important;
     font-family: 'Nunito', sans-serif;
+    font-weight: 800!important;
 
 }
 .sidebar-menu-items{
@@ -98,8 +102,9 @@ a{
 }
 
 h5{
-    padding: 0;
-    margin: 0;
+    padding: 0!important;
+    margin: 0!important;
+    font-weight: 800!important;
 }
 .sidebar-menu-icon{
     /* background-color: aqua; */
@@ -119,9 +124,10 @@ h5{
 .sidebar-menu-title h5{
     color: rgb(121, 121, 121);
 }
+
 ul{
-    list-style: none;
-    padding-left: 0;
+    list-style: none!important;
+    padding-left: 0!important;
 }
 .togle-btn{
     position: relative;
