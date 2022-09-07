@@ -26,12 +26,18 @@ export default function Login() {
       })
     });
     const data = res.json();
+    console.log(data);
+    console.log(res.Promise);
     if (res.status === 400 || !data) {
       window.alert("invalid credencial");
     }
     else {
+  
+      window.localStorage.setItem("data",data);
+      
+  
       window.alert("login successfull");
-      navigate('/Dashboard')
+     
     }
   }
   return (

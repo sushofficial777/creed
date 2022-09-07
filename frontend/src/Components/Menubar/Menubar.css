@@ -3,6 +3,7 @@
     background-color: rgb(255, 255, 255);
     height: 60px;
     box-shadow: 0 4px 10px -4px rgb(145, 145, 145);
+    display: none;
     
     
 }

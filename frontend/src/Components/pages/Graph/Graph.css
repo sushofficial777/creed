@@ -1,8 +1,74 @@
 .graph-wrapper{
-    height: 100vh;
-    background-color: rgb(219, 182, 182);
+   
+    /* background-color: rgb(219, 182, 182); */
+    margin: 0 auto;
+    /* margin-left: 275px; */
+    margin-top: 14px;
+    width: 100%;
+   
+}
+.graph{
+    /* background-color: aqua; */
+    height: 100%;
     margin: 0 auto;
     margin-left: 275px;
     margin-top: 14px;
-    width: 81%;
+    /* width: 81%; */
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+  
+}
+.section1{
+    padding: 1rem;
+    /* background-color: blue; */
+    height: auto;
+    display: grid;
+    grid-template-columns: repeat(7,1fr);
+    gap: 1.5rem;
+   
+}
+.node{
+    width: 8rem;
+    height: 7rem;
+    background-color: rgb(255, 255, 255);
+    border-radius: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 5px 8px 16px -8px rgb(149, 148, 148),
+    -5px -5px 16px -6px rgb(227, 227, 227);
+    cursor: pointer;
+}
+.section2{
+    padding: 1rem;
+    /* background-color: blue; */
+    height: auto;
+    display: grid;
+    grid-template-columns: repeat(7,1fr);
+    gap: 1.5rem;
+   
+}
+.section3{
+    padding: 1rem;
+    /* background-color: blue; */
+    height: auto;
+    display: grid;
+    grid-template-columns: repeat(7,1fr);
+    gap: 1.5rem;
+   
+}
+
+.section1 .node{
+background-color: rgb(93, 212, 101);
+}
+.section2 .node{
+    background-color: aqua;
+}
+.section3 .node{
+    background-color: aqua;
 }
