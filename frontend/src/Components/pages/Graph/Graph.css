@@ -5,6 +5,8 @@
     /* margin-left: 275px; */
     margin-top: 14px;
     width: 100%;
+    
+ 
    
 }
 .graph{
@@ -15,11 +17,10 @@
     margin-top: 14px;
     /* width: 81%; */
     padding: 2rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    
     gap: 2rem;
+
+    
   
 }
 .section1{
@@ -33,15 +34,15 @@
 }
 .node{
     width: 8rem;
-    height: 7rem;
+    height: 8rem;
     background-color: rgb(255, 255, 255);
-    border-radius: 50px;
+    border-radius: 100px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    box-shadow: 5px 8px 16px -8px rgb(149, 148, 148),
-    -5px -5px 16px -6px rgb(227, 227, 227);
+    box-shadow: 5px 8px 16px -10px rgb(69, 69, 69),
+    -5px -10px 16px -6px rgb(233, 233, 233);
     cursor: pointer;
 }
 .section2{
@@ -63,12 +64,18 @@
    
 }
 
-.section1 .node{
-background-color: rgb(93, 212, 101);
+/* .section1 .node{
+background-color: rgb(255, 255, 255);
 }
 .section2 .node{
-    background-color: aqua;
+    background-color: rgb(255, 255, 255);
 }
 .section3 .node{
-    background-color: aqua;
-}
+    background-color: rgb(255, 255, 255);
+} */
+
+
+
+
+
+

@@ -1,7 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import './Graph.css'
 import Sidebar from '../../Sidebar/Sidebar';
 import Menubar from '../../Menubar/Menubar';
+
+import { Runtime, Inspector } from "@observablehq/runtime";
+import notebook from "@d3/zoomable-circle-packing";
 
 const Graph = () => {
 
@@ -36,7 +39,7 @@ const Graph = () => {
     }).then((TlData) => {
       const Tl = TlData;
       setTlData(Tl.data);
-     
+
 
     })
   }
@@ -48,75 +51,50 @@ const Graph = () => {
   }, [])
 
 
-   ///fetch employees
-   const [EmpData, setemplData] = useState([]);
- 
-   const fetchEmployee = () => {
-     fetch('/getemployee').then((res) => {
- 
-       return res.json();
- 
-     }).then((data) => {
-       const empdata = data;
-       setemplData(empdata.data);
-      
- 
-     })
-   }
-   useEffect(() => {
-     fetchManager();
-     fetchTl();
-     fetchEmployee();
- 
- 
-   }, [])
- 
+  ///fetch employees
+  const [EmpData, setemplData] = useState([]);
+
+  const fetchEmployee = () => {
+    fetch('/getemployee').then((res) => {
+
+      return res.json();
+
+    }).then((data) => {
+      const empdata = data;
+      setemplData(empdata.data);
+
+
+    })
+  }
+  useEffect(() => {
+    fetchManager();
+    fetchTl();
+    fetchEmployee();
+
+
+  }, [])
+
+  const chartRef = useRef();
+
+  useEffect(() => {
+    const runtime = new Runtime();
+    runtime.module(notebook, name => {
+      if (name === "chart") return new Inspector(chartRef.current);
+    });
+    return () => runtime.dispose();
+  }, []);
+
+
 
   return (
     <>
       <Sidebar />
-      <Menubar />
       <div className="graph-wrapper">
         <div className="graph">
-          <div className="section1">
-
-            {data.map((data) => (
-              <div className="node">
-                
-               {data.name}
-               <p>{data.role}</p>
-              </div>
-            ))}
-
-          </div>
-          {/* ///////sectuion2 is starting */}
-          <div className="section2">
-           
-          {TlData.map((TlData) => (
-              <div className="node">
-                
-               {TlData.name}
-               <p>{TlData.role}</p>
-              </div>
-            ))}
-          </div>
-          {/* ///////sectuion3 is starting */}
-          <div className="section3">
-          {EmpData.map((EmpData) => (
-              <div className="node">
-                
-               {EmpData.name}
-               <p>{EmpData.role}</p>
-              </div>
-            ))}
-          </div>
+          <div ref={chartRef} />
+        
         </div>
-
-
-
       </div>
-
-
 
     </>
   );
