@@ -15,6 +15,7 @@ router.post('/add',adminController.addData);
 router.get('/getmanager',userController.GetManagerData);
 router.get('/getteamlead',userController.GetTeamleadData);
 router.get('/getemployee',userController.GetEmployeeData);
+router.get('/getemployee',userController.GetEmployeeData);
 
 //count manager
 router.get('/countmanager',userController.CountManagerData);

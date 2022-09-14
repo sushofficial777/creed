@@ -21,12 +21,12 @@ const App =() => {
       <Route exact path="/" element=<Login/> />
       <Route exact path="/admin/Dashboard" element=<Dashboard/> />
       <Route exact path="/admin/Graph" element=<Graph/> />
-      <Route exact path="/admin/Dashboard/managers" element=<Manager/> />
-      <Route exact path="/admin/Dashboard/employees" element=<Employee/> />
-      <Route exact path="/admin/Dashboard/managers/new" element=<NewManager/> />
-      <Route exact path="/admin/Dashboard/teamleads/new" element=<NewTeamLead/> />
-      <Route exact path="/admin/Dashboard/departments/new" element=<NewDepartment/> />
-      <Route exact path="/admin/Dashboard/employees/new" element=<NewEmployee/> />
+      <Route exact path="/admin/Dashboard/managers/list" element=<Manager/> />
+      <Route exact path="/admin/Dashboard/employees/list" element=<Employee/> />
+      <Route exact path="/admin/Dashboard/managers" element=<NewManager/> />
+      <Route exact path="/admin/Dashboard/teamleads" element=<NewTeamLead/> />
+      <Route exact path="/admin/Dashboard/departments" element=<NewDepartment/> />
+      <Route exact path="/admin/Dashboard/employees" element=<NewEmployee/> />
       
       {/* <Route exact path="/admin/Dashboard/user" element={<ProtectedRoute Component={User} />} />
       <Route exact path="/admin/sign-out" element={<ProtectedRoute Component={} />} />

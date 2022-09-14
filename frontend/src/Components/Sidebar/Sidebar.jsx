@@ -24,6 +24,9 @@ const Sidebar = () => {
         console.log("clicked");
     }
 
+  const userName =   window.localStorage.getItem("userName");
+  const userRole =   window.localStorage.getItem("userRole");
+
     return (
         <>
             {

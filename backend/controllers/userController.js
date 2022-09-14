@@ -13,21 +13,16 @@ module.exports = {
          
         const UserData = await user.findOne({ email: email });
      
-      
-       
-
         if (!email || !password) {
             res.status(400).json({ error: "plaese fill all data" });
         }
 
         else if (!UserData) {
-            res.status(400).json({ error: "invalid gauuu credential" });
+            res.status(400).json({ error: "invalid  credential" });
         }
-        else if (!(UserData.role === 'manager')) {
-            res.status(400).json({ error: "sorry you are not authorised" });
-        }
+      
         else if (!(matchPass === UserData.password)) {
-            res.status(400).json({ error: "invalid pass credential" });
+            res.status(400).json({ error: "invalid  credential" });
         }
         else {
 
@@ -35,13 +30,10 @@ module.exports = {
             const token = sign({ email: email }, process.env.ADMIN_SECRET_KEY);
             res.cookie('jwt', token);
 
-           localStorage.setItem("data",UserData);
+         
+           console.log(UserData);
           
-            res.status(200).json(
-                {
-                     message: "you are successfully logged-in" ,
-                     data:UserData
-                    });
+         return   res.send(UserData);
 
             next();
         }

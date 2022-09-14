@@ -7,7 +7,7 @@ import { ImCamera } from 'react-icons/im'
 const NewManager = () => {
 
     const [user, setUser] = useState({
-        name: "", email: "", address: "", country: "", username: "", password: ""
+        name: "", email: "", phone: "", country: "", company: "", password: ""
     })
     let name,value;
 
@@ -24,7 +24,7 @@ const NewManager = () => {
     const sendData = async (e)=>{
         e.preventDefault();
 
-        const { name, email, address, country, username, password} =user;
+        const { name, email, phone, country, company, password} =user;
 
       const res = await  fetch("/adduser",{
             method: 'POST',
@@ -32,7 +32,7 @@ const NewManager = () => {
                 "Content-Type":"application/json"
             },
             body:JSON.stringify({
-                name, email, address, country, username, password
+                name, email, phone, country, company, password
             })
 
         })
@@ -84,15 +84,23 @@ const NewManager = () => {
                         <div className="field">
                             <div className="input">
                                 <label htmlFor="name">Full Name</label>
-                                <input type="text" placeholder='Robert' name='name' value={user.name} onChange={handleInput} /></div><div className="input" >
+                                <input type="text" placeholder='Robert' name='name' value={user.name} onChange={handleInput} /></div>
+                                <div className="input select-input" >
 
-                                <label htmlFor="username">Username</label><input type="text" placeholder='robert@123' name='username' value={user.username} onChange={handleInput} /></div>
+                                <label htmlFor="company">Company</label>
+                                <select name="company" id="company">
+                                    <option value="company">company </option>
+                                    <option value="company">company </option>
+                                    <option value="company">company </option>
+                                </select>
+                              
+                              </div>
                         </div>
                         <div className="field">
                             <div className="input"><label htmlFor="email">Email</label><input type="text" placeholder='robert@gmail.com' name='email' value={user.email} onChange={handleInput} /></div><div className="input"> <label htmlFor="password">password</label><input type="text" placeholder='r@b#e$' name='password' value={user.password} onChange={handleInput} /></div>
                         </div>
                         <div className="field">
-                            <div className="input"><label htmlFor="address">Address</label><input type="text" placeholder='main street newyork' name='address' value={user.address} onChange={handleInput} /></div><div className="input"><label htmlFor="country">Country</label><input type="text" placeholder='Country' name='country' value={user.country} onChange={handleInput} /></div>
+                            <div className="input"><label htmlFor="phone">phone</label><input type="text" placeholder='+91' name='phone' value={user.phone} onChange={handleInput} /></div><div className="input"><label htmlFor="country">Country</label><input type="text" placeholder='Country' name='country' value={user.country} onChange={handleInput} /></div>
                         </div>
 
                         <div className="field">

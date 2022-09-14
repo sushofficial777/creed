@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './NewEmployee.css'
 import Sidebar from '../../../Sidebar/Sidebar';
 import Menubar from '../../../Menubar/Menubar';
-import { ImCamera } from 'react-icons/im'
+
 
 const NewEmployee = () => {
 

@@ -22,6 +22,18 @@
     
   
 }
+.department-input{
+    width: 100%;
+    padding: .9rem .5rem;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    
+    gap: .2rem;
+}
 .user-image-upload{
     /* background-color: aliceblue; */
     display: flex;
@@ -67,6 +79,10 @@ box-shadow: 0 6px 10px -8px rgb(0, 0, 0);
     height: 100%;
     object-fit: cover;
     
+}
+.dep-sel{
+    /* background-color: aquamarine; */
+    width: 92%;
 }
 .create-form-wrapper{
     /* display: flex; */

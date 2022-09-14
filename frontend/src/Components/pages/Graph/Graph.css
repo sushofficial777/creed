@@ -3,8 +3,9 @@
     /* background-color: rgb(219, 182, 182); */
     margin: 0 auto;
     /* margin-left: 275px; */
-    margin-top: 14px;
+    /* margin-top: 14px; */
     width: 100%;
+    height: 100vh;
     
  
    
@@ -13,68 +14,216 @@
     /* background-color: aqua; */
     height: 100%;
     margin: 0 auto;
-    margin-left: 275px;
-    margin-top: 14px;
-    /* width: 81%; */
-    padding: 2rem;
+    /* margin-left: 275px;  */
+     margin-top: 14px; 
+    width: 100%; 
+     padding: 1rem;
     
-    gap: 2rem;
+    /* gap: 2rem;    */
 
     
   
 }
-.section1{
+
+
+.title {
+    background-color: #404e7c;
+    color: #fef9ef;
+    text-align: center;
     padding: 1rem;
-    /* background-color: blue; */
-    height: auto;
-    display: grid;
-    grid-template-columns: repeat(7,1fr);
-    gap: 1.5rem;
-   
-}
-.node{
-    width: 8rem;
-    height: 8rem;
-    background-color: rgb(255, 255, 255);
-    border-radius: 100px;
+    font-size: 1.5em;
+    z-index: 1;
+  }
+  /* orgchart css */
+  .org-chart {
+    height: 100%;
+    width: 100%
+  }
+  .org-chart > svg {
+    height: 100%;
+    background-color: #ffffff;
+  }
+  .node-container {
+    min-height: 80px;
+    background-color: #ffffff;
+    color: #333333;
+    display: flex;
+    justify-content: center;
+    border: 2px solid orange;
+    border-radius: 60px;
+  }
+  .node-details {
+    width: 100%;
+    padding: 1.2rem;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+  .node-content {
+    display: flex;
+    align-items: center;
+  }
+  .node-team {
+    width: 100%;
+    text-align: center;
+  }
+  .node-team-name {
+    margin-bottom: 0.5rem;
+    color: #333333;
+    font-size: 1rem;
+  }
+  .node-team-member-img {
+    width: 50px;
+    height: 50px;
+    margin: 0.2rem;
+    border-radius: 50%;
+  }
+  .node-img {
+    width: 60px;
+    height: 60px;
+    border-radius: 100%;
+  }
+  .node-info {
+    margin-left: 1.5rem;
+    color: #333333;
     display: flex;
     flex-direction: column;
+    justify-content: space-evenly;
+  }
+  .node-name {
+    padding-bottom: 0.3rem;
+    font-size: 1rem;
+    font-weight: bold;
+  }
+  .node-role {
+    padding-bottom: 0.5rem;
+    font-size: 1rem;
+  }
+  .node-department {
+    padding: 0.5rem;
+    text-align: center;
+    display: flex;
     align-items: center;
+    background-color: #ffcb77;
+    border-radius: 1rem;
+    color: orange;
+  }
+  .node-department > svg {
+    margin-right: 0.5rem;
+  }
+  .expand-btn {
+    width: 30px;
+    height: 30px;
+    margin: auto;
+    background-color: #ffffff;
+    display: flex;
     justify-content: center;
-    box-shadow: 5px 8px 16px -10px rgb(69, 69, 69),
-    -5px -10px 16px -6px rgb(233, 233, 233);
+    align-items: center;
+    color: #ff8c00;
+    border: 2px solid ;
+    border-radius: 50%;
     cursor: pointer;
-}
-.section2{
-    padding: 1rem;
-    /* background-color: blue; */
-    height: auto;
-    display: grid;
-    grid-template-columns: repeat(7,1fr);
-    gap: 1.5rem;
-   
-}
-.section3{
-    padding: 1rem;
-    /* background-color: blue; */
-    height: auto;
-    display: grid;
-    grid-template-columns: repeat(7,1fr);
-    gap: 1.5rem;
-   
-}
+  }
+  .expand-btn > span:last-child {
+    display: flex;
+  }
+  
+  /* card css */
+  .card-close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 30px;
+    height: 30px;
+    color: #ff8c00;
+    background-color: #ffffff;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid orange;
+    cursor: pointer;
+  }
+  .card {
+    position: absolute;
+    top: 60px;
+    left: 66%;
+    transform: translate(-0%);
 
-/* .section1 .node{
-background-color: rgb(255, 255, 255);
-}
-.section2 .node{
-    background-color: rgb(255, 255, 255);
-}
-.section3 .node{
-    background-color: rgb(255, 255, 255);
-} */
-
-
+    width: 25%;
+    height: 75%;
+    padding: 2rem;
+    margin: 2rem;
+    background-color: #fef9ef;
+    border-radius: 1rem;
+    border: 1px solid #d3d3d3;
+    overflow: hidden;
+  }
+  .card-header {
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+  .card-img {
+    width: 120px;
+    border-radius: 100%;
+  }
+  .card-name {
+    margin-top: 1rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  .card-role {
+    margin: 1rem 0;
+    font-size: 1.2rem;
+  }
+  .card-body {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+  }
+  .card-body-team-members {
+    margin-top: 1rem;
+    height: 26vh;
+    overflow: scroll;
+  }
+  .card-item {
+    width: 100%;
+    margin: 0.5rem 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.9rem;
+  }
+  .card-item-label {
+    margin: 0.5rem 0;
+    font-weight: bold;
+  }
+  .card-item-value {
+    text-align: justify;
+  }
+  .card-item-team {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
+  .card-item-img {
+    width: 50px;
+    height: 50px;
+    margin: 0.2rem;
+    border-radius: 50%;
+  }
+  .card-item-name {
+    margin-left: 0.5rem;
+    font-weight: bold;
+  }
+  .card-item-role {
+    font-size: 0.8rem;
+    margin-left: 0.5rem;
+  }
+  
 
 
 

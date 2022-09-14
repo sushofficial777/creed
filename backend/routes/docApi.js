@@ -1,9 +1,13 @@
-const listDoc = {
+const listDoc =
+
+{
 
 
     tags: [
         "UserData"
     ],
+
+
     responses: {
 
 
@@ -11,6 +15,7 @@ const listDoc = {
             description: "ok",
             content: {
                 "applicaton/json": {
+
 
                 }
             }
@@ -69,5 +74,7 @@ const UserRouteDoc = {
         post:createUser
     }
 }
+
+
 
 module.exports = UserRouteDoc;
