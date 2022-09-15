@@ -3,7 +3,9 @@ import { FaBuilding } from "react-icons/fa";
 import "../Graph.css";
 
 const CustomNodeContent = (props) => {
+
   return (
+    
     <>
       <div className="node-container">
         <div className="node-details">

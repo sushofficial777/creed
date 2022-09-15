@@ -2,6 +2,7 @@ const express = require('express');
 const router =  express.Router();
 const userController = require('../controllers/userController');
 const adminController = require('../controllers/adminController');
+const companyController = require('../controllers/companyController')
 
 // admin add user
 router.post('/adduser',userController.adduser);
@@ -21,6 +22,9 @@ router.get('/getemployee',userController.GetEmployeeData);
 router.get('/countmanager',userController.CountManagerData);
 router.get('/countteamlead',userController.CountTeamleadData);
 router.get('/countemployee',userController.CountEmployeeData);
+
+//ADD COMPANY
+router.post('/addcompany',companyController.addcompany);
 
 
 module.exports = router;

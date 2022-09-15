@@ -1,29 +1,14 @@
 const mongoose = require('mongoose');
 
 const companySchema = new mongoose.Schema({
-    company: {
+    companyName: {
         type: String,
 
     },
-    user_id: {
-        type: String,
-    },
-   
-   role: {
-    type: String,
-    default:"company"
-   
-    },
-    department:{
-        type: String,
-        default:"HR"
-       
-    },
-    company:{
-        type:String,
-        default:"CREED"
-
-    }
+   companyLogo:{
+    data: Buffer,
+    contentType: String
+}
    
 })
 

@@ -10,6 +10,7 @@ import { AiOutlineTeam } from 'react-icons/ai'
 import { HiOutlineOfficeBuilding } from 'react-icons/hi'
 import { GrGraphQl } from 'react-icons/gr'
 import Logo from '../img/creedLogo.png'
+import AddBusinessIcon from '@mui/icons-material/AddBusiness';
 
 
 import { MdOutlineCancel } from 'react-icons/md'
@@ -24,8 +25,19 @@ const Sidebar = () => {
         console.log("clicked");
     }
 
-  const userName =   window.localStorage.getItem("userName");
-  const userRole =   window.localStorage.getItem("userRole");
+  
+  const userData =   window.localStorage.getItem("user");
+  
+  const data = JSON.parse(userData);
+  const userName = data.name;
+  console.log(userName[0].toUpperCase());
+  
+  const userRole = data.role;
+
+
+  
+
+
 
     return (
         <>
@@ -54,6 +66,7 @@ const Sidebar = () => {
                             <li className="sidebar-menu-item"><div className="sidebar-menu-icon"><AiOutlineTeam /></div><div className="sidebar-menu-title"><Link to="/admin/Dashboard/teamleads"><h5>Team Leaders</h5></Link></div></li>
                             <li className="sidebar-menu-item"><div className="sidebar-menu-icon"><RiTeamLine /></div><div className="sidebar-menu-title"><Link to="/admin/Dashboard/employees"><h5>Employees</h5></Link></div></li>
                             <li className="sidebar-menu-item"><div className="sidebar-menu-icon"><HiOutlineOfficeBuilding /></div><div className="sidebar-menu-title"><Link to="/admin/Dashboard/departments"><h5>Departments</h5></Link></div></li>
+                            <li className="sidebar-menu-item"><div className="sidebar-menu-icon"><AddBusinessIcon /></div><div className="sidebar-menu-title"><Link to="/admin/Dashboard/company"><h5>Company</h5></Link></div></li>
 
 
 
@@ -64,8 +77,8 @@ const Sidebar = () => {
                                 <img src={Image1} alt="" />
                             </div>
                             <div className="user-detail">
-                                <h2>Sushil Kumar</h2>
-                                <h3>Administrator</h3>
+                                <h2>{userName[0].toUpperCase() + userName.substring(1)}</h2>
+                                <h3>{userRole[0].toUpperCase() + userRole.substring(1)}</h3>
 
                             </div>
 
