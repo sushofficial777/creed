@@ -58,51 +58,51 @@ const NewDepartment = () => {
     return (
         <>
             <Sidebar />
-            <Menubar />
             <div className="create-user-wrapper">
-                <h2>Add new Deparment</h2>
-                <form action="" method='POST' className='create-user-form'>
+                <h2>Add new Department</h2>
+                <form action="" method='POST' className='create-company-form'>
 
-                    <div className="user-image-wrapper-employee">
-                        <div className="user-image"><img
+                    <div className="department-image-wrapper">
+                        <div className="department-image"><img
                             src={
                                 file
                                     ? URL.createObjectURL(file)
                                     : "https://icon-library.com/images/no-image-icon/no-image-icon-0.jpg"
                             }
                             alt="" /></div>
-                        <div className="user-image-upload">
+                        <div className="department-image-upload">
                             <input type="file" name='select-image' accept="image/*" id="select-image"
                                 onChange={(e) => setFile(e.target.files[0])} />
-                            <label htmlFor="select-image">upload image</label>
-
+                            <label htmlFor="select-image">upload logo</label>
                         </div>
                     </div>
+
+
+
                     <div className="create-form-wrapper" data-aos='fade-up'>
-                        <div className="field department-input">
-                            <div className="input ">
-                                <label htmlFor="name">Department Name</label>
-                                <input type="text" placeholder='Robert' name='name' value={user.name} onChange={handleInput} />
+                        <h3>Fill Department Detail</h3>
+                        <div className="field">
+                            <div className="input"><label htmlFor="companyName">Department Name</label><input type="text" placeholder='HR' name='companyName' value={user.companyName} onChange={handleInput} /></div>
+                            <div className="input">
+
 
                             </div>
-                            <div className="input select-input dep-com" >
-
-                                <label htmlFor="company">Company</label>
-                                <select name="company" id="company" className='dep-sel'>
-                                    <option value="company">company </option>
-                                    <option value="company">company </option>
-                                    <option value="company">company </option>
-                                </select>
-
-                            </div>
-
-
                         </div>
+                        <h3>Fill Manager Detail</h3>
+                        <div className="field">
+                            <div className="input"><label htmlFor="firstName">First Name</label><input type="text" placeholder='John' name='firstName' value={user.firstName} onChange={handleInput} /></div><div className="input"> <label htmlFor="">Last Name</label><input type="text" placeholder='Doe' name='lastName' value={user.lastName} onChange={handleInput} /></div>
+                        </div>
+                        <div className="field">
+                            <div className="input"><label htmlFor="email">Email</label><input type="text" placeholder='@gmail.com' name='email' value={user.email} onChange={handleInput} /></div><div className="input"> <label htmlFor="password">Password</label><input type="text" placeholder='@xyz#5367$' name='password' value={user.password} onChange={handleInput} /></div>
+                        </div>
+                        <div className="field">
+                            <div className="input"><label htmlFor="phone">Phone</label><input type="text" placeholder='+91' name='phone' value={user.phone} onChange={handleInput} /></div><div className="input auto-input">
 
+                            </div>
+                        </div>
 
                         <div className="field">
                             <div className="input"><button onClick={sendData}>Submit</button></div>
-
                         </div>
                     </div>
                 </form>

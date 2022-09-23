@@ -2,10 +2,19 @@ const mongoose = require('mongoose');
 
 
 const userSchema = new mongoose.Schema({
-    name: {
+    firstName: {
         type: String,
 
     },
+    lastName: {
+        type: String,
+
+    },
+    phone: {
+        type: String,
+
+    },
+
     email: {
         type: String,
     },
@@ -19,13 +28,16 @@ const userSchema = new mongoose.Schema({
     },
     department:{
         type: String,
-        default:"HR"
+        default:"NON"
       
     },
     company:{
         type:String,
         default:"CREED"
 
+    },
+    location:{
+        type:String
     }
    
 

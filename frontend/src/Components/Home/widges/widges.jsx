@@ -1,57 +1,62 @@
-import React,{useEffect,useState} from 'react';
+import React, { useEffect, useState } from 'react';
 import './widges.css';
-import {RiTeamLine} from 'react-icons/ri';
+import { RiTeamLine } from 'react-icons/ri';
+import {HiOutlineOfficeBuilding} from 'react-icons/hi'
+import {AiOutlineTeam} from 'react-icons/ai'
+import PeopleAltIcon from '@mui/icons-material/PeopleAlt'
+import Diversity3Icon from '@mui/icons-material/Diversity3';
+import Person4Icon from '@mui/icons-material/Person4';
+import ApartmentIcon from '@mui/icons-material/Apartment';
+const Widges = ({ type }) => {
+  let data;
 
-const Widges = ({type}) => {
-    let data;
+  const [manager, setManager] = useState("0");
+  const [teamlead, setTeamlead] = useState("0");
+  const [employee, setEmployee] = useState("0");
 
-    const [manager, setManager] = useState("0");
-    const [teamlead, setTeamlead] = useState("0");
-    const [employee, setEmployee] = useState("0");
+  console.log(manager.data);
+  const fetchManager = () => {
+    fetch('/countmanager').then((res) => {
+      // console.log(res);
+      return res.json();
 
-    console.log(manager.data);
-    const fetchManager = () => {
-        fetch('/countmanager').then((res) => {
-            // console.log(res);
-            return res.json();
+    }).then((managerData) => {
+      const managerCount = managerData;
+      setManager(managerCount);
 
-        }).then((managerData) => {
-            const managerCount = managerData;
-            setManager(managerCount);
-           
-        })
-    }
-    const fetchTeamleader = () => {
-      fetch('/countteamlead').then((res) => {
-          // console.log(res);
-          return res.json();
+    })
+  }
+  const fetchTeamleader = () => {
+    fetch('/countteamlead').then((res) => {
+      // console.log(res);
+      return res.json();
 
-      }).then((teamleadData) => {
-          const teamleadCount =teamleadData;
-          setTeamlead(teamleadCount);
-         
-      })
+    }).then((teamleadData) => {
+      const teamleadCount = teamleadData;
+      setTeamlead(teamleadCount);
+
+    })
   }
 
   const fetchEmployee = () => {
     fetch('/countemployee').then((res) => {
-        // console.log(res);
-        return res.json();
+      // console.log(res);
+      return res.json();
 
     }).then((employeeData) => {
-        const employeeCount = employeeData;
-        setEmployee(employeeCount);
-       
+      const employeeCount = employeeData;
+      setEmployee(employeeCount);
+
     })
-}
-    
+  }
 
 
-    useEffect(() => {
+
+  useEffect(() => {
     fetchTeamleader();
     fetchEmployee();
-        fetchManager();
-    }, [])
+    fetchManager();
+  }, [])
   //temporary
 
   const diff = 20;
@@ -60,14 +65,14 @@ const Widges = ({type}) => {
     case "manager":
       data = {
         title: "MANAGERS",
-        count:manager.data,
+        count: manager.data,
         link: "See all manager",
         icon: (
-          <RiTeamLine
+          <Person4Icon
             className="icon"
             style={{
               color: "crimson",
-              backgroundColor: "rgba(255, 0, 0, 0.2)",
+           
             }}
           />
         ),
@@ -76,13 +81,13 @@ const Widges = ({type}) => {
     case "teamlead":
       data = {
         title: "TEAMLEADERS",
-        count:teamlead.data,
+        count: teamlead.data,
         link: "See all teamleaders",
         icon: (
-          <RiTeamLine
+          <PeopleAltIcon
             className="icon"
             style={{
-              backgroundColor: "rgba(218, 165, 32, 0.2)",
+             
               color: "goldenrod",
             }}
           />
@@ -92,12 +97,12 @@ const Widges = ({type}) => {
     case "employee":
       data = {
         title: "EMPLOYEES",
-        count:employee.data,
+        count: employee.data,
         link: "See all employees",
         icon: (
-          <RiTeamLine
+          <Diversity3Icon
             className="icon"
-            style={{ backgroundColor: "rgba(0, 128, 0, 0.2)", color: "green" }}
+            style={{  color: "green" }}
           />
         ),
       };
@@ -105,13 +110,13 @@ const Widges = ({type}) => {
     case "department":
       data = {
         title: "DEPARTMENT",
-      count:manager.data,
+        count: manager.data,
         link: "See all departments",
         icon: (
-          <RiTeamLine
+          <ApartmentIcon 
             className="icon"
             style={{
-              backgroundColor: "rgba(128, 0, 128, 0.2)",
+             
               color: "purple",
             }}
           />
@@ -124,20 +129,25 @@ const Widges = ({type}) => {
 
   return (
     <div className="widget">
-      <div className="left">
-        <span className="title">{data.title}</span>
-        <span className="counter">
-          {data.count}
-        </span>
-        <span className="link">{data.link}</span>
-      </div>
-      <div className="right">
-        <div className="percentage positive">
-        
-        
+      <div className="widget-up">
+        <div className="widget-count">
+          <h3>{data.count}</h3>
         </div>
-        {data.icon}
+        <div className="widget-title">
+          <h3>{data.title}</h3>
+        </div>
       </div>
+      <div className="widget-down">
+        <div className="widget-link">
+          <h3>{data.link}</h3>
+        </div>
+        <div className="widget-icon">
+          {data.icon}
+        </div>
+      </div>
+
+
+
     </div>
   );
 };

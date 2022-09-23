@@ -3,7 +3,7 @@ const app = express();
 const cors = require('cors');
 const cookieParser = require('cookie-parser');
 const bodyParser  = require('body-parser')
-
+const fileupload = require('express-fileupload');
 const SwaggerDoc= require('swagger-ui-express');
 const swaggerDocumantation = require('./apiDoc/apiDoc')
 const dotenv = require('dotenv');
@@ -20,6 +20,7 @@ app.use(express.json());
 app.use(cookieParser())
 app.use((cors()))
 app.use(express.urlencoded({extended:true}));
+app.use(fileupload());
 
 //base route
 

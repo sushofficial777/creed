@@ -1,62 +1,4 @@
-.create-user-form{
-   
-    background-color: transparent;
-   
-    display: flex;
-  background-color: var(--color-white);
-    margin-top: 14px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px -5px rgb(163, 163, 163);
-    
-}
-.user-image-wrapper-employee{
-    width: 30%;
-    margin-top: -70px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 2rem;
-
-    /* background-color: brown; */
-    
-  
-}
-.department-input{
-    width: 100%;
-    padding: .9rem .5rem;
-    background-color: rgb(255, 255, 255);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    
-    gap: .2rem;
-}
-.user-image-upload{
-    /* background-color: aliceblue; */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-.user-image-upload input[type="file"]{
-   display: none;
-    
-}
-.user-image-upload label{
-background-color: rgb(0, 0, 0);
-color: rgb(255, 255, 255);
-padding: .5rem 1rem;
-border-radius: 5px;
-cursor: pointer;
-display: flex;
-align-items: center;
-justify-content: center;
-box-shadow: 0 6px 10px -8px rgb(0, 0, 0);
-}
-.user-image-wrapper-employee .user-image{
+.department-image-wrapper .department-image{
     /* background-color: aqua; */
  overflow: hidden;
    
@@ -70,8 +12,50 @@ box-shadow: 0 6px 10px -8px rgb(0, 0, 0);
     color: var(--color-gray-dark);
     background-color: var(--color-light);
     box-shadow: 0 0 10px -5px rgb(25, 25, 25);
+   
 }
-.user-image-wrapper-employee .user-image img{
+
+.department-input{
+    width: 100%;
+    padding: .9rem .5rem;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    
+    gap: .2rem;
+}
+.department-image-wrapper{
+    /* background-color: aqua; */
+    width: 30%;
+}
+.department-image-upload{
+    /* background-color: aliceblue; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.department-image-upload input[type="file"]{
+   display: none;
+    
+}
+.department-image-upload label{
+background-color: rgb(0, 0, 0);
+color: rgb(255, 255, 255);
+padding: .5rem 1rem;
+border-radius: 5px;
+cursor: pointer;
+display: flex;
+align-items: center;
+justify-content: center;
+box-shadow: 0 6px 10px -8px rgb(0, 0, 0);
+
+}
+
+.department-image-wrapper .department-image img{
     /* background-color: aqua; */
  
    
@@ -84,33 +68,8 @@ box-shadow: 0 6px 10px -8px rgb(0, 0, 0);
     /* background-color: aquamarine; */
     width: 92%;
 }
-.create-form-wrapper{
-    /* display: flex; */
-    /* justify-content: center;
-    align-items: center; */
-    /* flex-direction: column; */
-    /* background-color: brown; */
-    /* width: 100%;
-    height:60%; */
-    gap: 2rem;
-    /* background-color: aquamarine; */
-    width: 70%;
-    padding: 1rem;
-}
-.create-user-wrapper{
-    /* background-color: rgb(61, 103, 134); */
-  
-   
-   
-   
-    height: 80vh;
-    background-color: rgb(255, 255, 255);
-    margin: 0 auto;
-    margin-left: 270px;
-    margin-top: 14px;
-    width: 79%;
 
-}
+
 .create-user-wrapper h2{
     display: flex;
     padding: .45rem ;
@@ -130,21 +89,17 @@ box-shadow: 0 6px 10px -8px rgb(0, 0, 0);
     align-items: center;
     justify-content: center;
     width: 100%;
+   
     
-    gap: .2rem;
+    gap: 1rem;
     /* background-color: blueviolet; */
 }
-.field .input{
-    width: 100%;
-    padding: .9rem .5rem;
-    
-    
-}
+
 .field input:focus{
     outline: none;
 }
 .input input{
-    width: 90%;
+    width: 100%;
     padding: .8rem .4rem;
     border-bottom: 1px solid black ;
     border: none;
@@ -163,16 +118,8 @@ box-shadow: 0 6px 10px -8px rgb(0, 0, 0);
 .input input:hover{
    
 }
-.field .input button{
-  
-    width: 97.4%;
-    padding: .7rem 0;
-    background-color: rgb(0, 0, 0);
-    border: none;
-    color: white;
-    border-radius: 5px;
-    cursor: pointer;
-    box-shadow: 0 0 20px -6px rgb(142, 142, 142);
+.input-btn{
+
 }
 
 

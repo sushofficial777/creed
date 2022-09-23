@@ -11,6 +11,11 @@ import NewDepartment from './Components/pages/Department/NewDepartment/NewDepart
 import NewCompany from './Components/pages/Company/NewCompany/NewCompany';
 import Employee from './Components/pages/Employee/Employee';
 import Graph from './Components/pages/Graph/Graph';
+import CmpanyLocationMap
+ from './Components/pages/Company/NewCompany/Cmpany-location-map/Cmpany-location-map';
+ import AutocompleteLocation from './Components/pages/Autocomplete-location/Autocomplete-location';
+import ShowMap from './Components/pages/Map/ShowMap'
+import CompanyMap from './Components/pages/Map/CompanyMap';
 
 
 const App =() => {
@@ -29,6 +34,9 @@ const App =() => {
       <Route exact path="/admin/Dashboard/departments" element=<NewDepartment/> />
       <Route exact path="/admin/Dashboard/company" element=<NewCompany/> />
       <Route exact path="/admin/Dashboard/employees" element=<NewEmployee/> />
+      <Route exact path="/admin/Dashboard/aut" element=<CmpanyLocationMap/> />
+      <Route exact path="/admin/Dashboard/map" element=<CompanyMap/> />
+
       
       {/* <Route exact path="/admin/Dashboard/user" element={<ProtectedRoute Component={User} />} />
       <Route exact path="/admin/sign-out" element={<ProtectedRoute Component={} />} />

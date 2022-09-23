@@ -1,0 +1,34 @@
+.map-title{
+ /* background-color: blue; */
+ padding: .2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.map-wrapper{
+    background-color: rgb(255, 255, 255);
+    height: 97%;
+    margin: .5rem;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px -5px rgb(97, 97, 97);
+    
+}
+.location-choose{
+    background-color: rgb(84, 87, 91);
+    
+}
+.CompanyMap{
+    background-color: aqua;
+    width: 100%;
+    height: 100%;
+}
+.notShow{
+    display: none;
+}
+.mapwrapper .map-container{
+    width: 100%;
+    position: relative;
+    height: 500px;
+    border-radius: 5px;
+    overflow: hidden;
+}

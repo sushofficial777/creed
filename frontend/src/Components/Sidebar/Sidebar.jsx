@@ -9,8 +9,10 @@ import { RiTeamLine } from 'react-icons/ri';
 import { AiOutlineTeam } from 'react-icons/ai'
 import { HiOutlineOfficeBuilding } from 'react-icons/hi'
 import { GrGraphQl } from 'react-icons/gr'
+import {BsFillPinMapFill} from 'react-icons/bs'
 import Logo from '../img/creedLogo.png'
 import AddBusinessIcon from '@mui/icons-material/AddBusiness';
+
 
 
 import { MdOutlineCancel } from 'react-icons/md'
@@ -22,7 +24,7 @@ const Sidebar = () => {
     const [sidebar, setSidebar] = useState(true);
     const hideSidebar = () => {
         setSidebar(!sidebar);
-        console.log("clicked");
+        // console.log("clicked");
     }
 
   
@@ -30,7 +32,7 @@ const Sidebar = () => {
   
   const data = JSON.parse(userData);
   const userName = data.name;
-  console.log(userName[0].toUpperCase());
+//   console.log(userName[0].toUpperCase());
   
   const userRole = data.role;
 
@@ -67,6 +69,7 @@ const Sidebar = () => {
                             <li className="sidebar-menu-item"><div className="sidebar-menu-icon"><RiTeamLine /></div><div className="sidebar-menu-title"><Link to="/admin/Dashboard/employees"><h5>Employees</h5></Link></div></li>
                             <li className="sidebar-menu-item"><div className="sidebar-menu-icon"><HiOutlineOfficeBuilding /></div><div className="sidebar-menu-title"><Link to="/admin/Dashboard/departments"><h5>Departments</h5></Link></div></li>
                             <li className="sidebar-menu-item"><div className="sidebar-menu-icon"><AddBusinessIcon /></div><div className="sidebar-menu-title"><Link to="/admin/Dashboard/company"><h5>Company</h5></Link></div></li>
+                            <li className="sidebar-menu-item"><div className="sidebar-menu-icon"><BsFillPinMapFill /></div><div className="sidebar-menu-title"><Link to="/admin/Dashboard/map"><h5>Map</h5></Link></div></li>
 
 
 

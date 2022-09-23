@@ -1,0 +1,27 @@
+.map-container{
+    width: 100%;
+    position: relative;
+    height: 800px;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+    .CompanyName-companyMap{
+        /* background-color: aqua; */
+        position: absolute;
+        z-index: 4;
+        top: 50px;
+        left: 300px;
+        padding: 1rem;
+        border-radius: 5px;
+        backdrop-filter: blur(1000px);
+    }
+
+    .CompanyName-companyMap ul li{
+        background-color: blue;
+        margin: 10px 0;
+        padding: .5rem;
+        cursor: pointer;
+        border-radius: 5px;
+        color: rgb(255, 255, 255);
+    }

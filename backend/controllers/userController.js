@@ -160,27 +160,31 @@ module.exports = {
     adduser: async (req, res, next) => {
 
 
-        const { name, email, password, role, department, company, image, } = req.body;
+        const { firstName, lastName, email, password, role, companyName,phone, location, image,department } = req.body;
 
         const UserData = await user.findOne({ email: email });
-        console.log(UserData);
+       
 
-        if (UserData) {
+
+        if (UserData ) {
             res.status(400).json({ error: "user already exist" });
         }
 
-        else if (!name || !email || !password || !role || !company) {
-            res.status(400).json({ error: "all fields are required" });
+        else if (!firstName || !lastName || !email  || !location) {
+            res.status(403).json({ error: "all fields are required" });
         }
         else {
             const hashedPass = md5(password);
 
             const userData = {
-                name: name,
+                firstName: firstName,
+                lastName:lastName,
                 email: email,
                 password: hashedPass,
-                company: company,
+                companyName: companyName,
                 role: role,
+                phone:phone,
+                location:location,
                 department: department
             }
 
