@@ -3,29 +3,52 @@ import './NewDepartment.css'
 import Sidebar from '../../../Sidebar/Sidebar';
 import Menubar from '../../../Menubar/Menubar';
 import { ImCamera } from 'react-icons/im'
+import { useNavigate } from 'react-router-dom';
 
 import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const NewDepartment = () => {
 
+     
+
     const [user, setUser] = useState({
-        name: "", email: "", address: "", country: "", username: "", password: ""
+        firstName: "", lastName: "", email: "", departmentName:"", address: "", country: "", username: "", password: "", companyType:"",phone:"",role:"Manager"
     })
+
+    //////get parentId from localStorage
+    const [ parentId, setParentId] = useState(0)
+    
+    useEffect(() => {
+        const getParentId = JSON.parse(localStorage.getItem('user'));
+        const parentId = getParentId._id;
+        setParentId(parentId)
+
+      
+        }, [])
+
     let name, value;
 
     const handleInput = (e) => {
-
-        console.log(e);
         name = e.target.name;
         value = e.target.value;
-
         setUser({ ...user, [name]: value });
-
     }
     const sendData = async (e) => {
         e.preventDefault();
 
-        const { name, email, address, country, username, password } = user;
+        const { firstName, email, lastName, phone, departmentName, password,address,role  } = user;
+        const saveInDepatrment = await fetch("/adddepartment", {
+            method: 'POST',
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                firstName, email, lastName, phone, departmentName, password,   
+            })
+
+        })
+        const data1 = await saveInDepatrment.json();
 
         const res = await fetch("/adduser", {
             method: 'POST',
@@ -33,27 +56,64 @@ const NewDepartment = () => {
                 "Content-Type": "application/json"
             },
             body: JSON.stringify({
-                name, email, address, country, username, password
+                firstName, email, lastName, phone, departmentName, password,address, parentId  ,role
             })
 
         })
         const data = await res.json();
 
-        if (res.status === 400 || !data) {
-            window.alert("invalid creation")
-            console.log("user cannot  created");
-        }
-        if (res.status === 422) {
-            window.alert("email allready exist")
-            console.log("email exist already");
+        if (saveInDepatrment.status === 400 || !data) {
+            toast.error('All Fields are Required', {
+                position: "top-center",
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+            });
+        }   
+       else if (saveInDepatrment.status === 401) {
+            toast.error('Email Allready Exists', {
+                position: "top-center",
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+            });
         }
         else {
-            window.alert('user created')
-            console.log("user created");
+            const sendMail = async () => {
+                const res1 = await fetch("/sendmail", {
+                    method: 'POST',
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify({
+                        firstName, email, lastName, phone, departmentName, password, role,
+    
+                    })
+                })
+                const mailData = await res1.json();
+                console.log( "jrghjufhj"+sendMail.status);
+               
+            }
+            sendMail();
+            toast.success('Department Successfully Created', {
+                position: "top-center",
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+            });
         }
     }
 
-    const [file, setFile] = useState("");
+    const [file, setFile] = useState(""); 
 
     return (
         <>
@@ -70,7 +130,7 @@ const NewDepartment = () => {
                                     : "https://icon-library.com/images/no-image-icon/no-image-icon-0.jpg"
                             }
                             alt="" /></div>
-                        <div className="department-image-upload">
+                        <div className="department-image-upload">   
                             <input type="file" name='select-image' accept="image/*" id="select-image"
                                 onChange={(e) => setFile(e.target.files[0])} />
                             <label htmlFor="select-image">upload logo</label>
@@ -79,11 +139,13 @@ const NewDepartment = () => {
 
 
 
-                    <div className="create-form-wrapper" data-aos='fade-up'>
+                    <div className="create-form-wrapper-dep" data-aos='fade-up'>
                         <h3>Fill Department Detail</h3>
                         <div className="field">
-                            <div className="input"><label htmlFor="companyName">Department Name</label><input type="text" placeholder='HR' name='companyName' value={user.companyName} onChange={handleInput} /></div>
+                            <div className="input"><label htmlFor="departmentName">Department Name</label><input type="text" placeholder='HR' name='departmentName' value={user.departmentName} onChange={handleInput} /></div>
                             <div className="input">
+                            <label htmlFor="companyType">Department Type</label><input type="text" placeholder='' name='companyType' value={user.companyType} onChange={handleInput} />
+                            
 
 
                             </div>
@@ -96,8 +158,8 @@ const NewDepartment = () => {
                             <div className="input"><label htmlFor="email">Email</label><input type="text" placeholder='@gmail.com' name='email' value={user.email} onChange={handleInput} /></div><div className="input"> <label htmlFor="password">Password</label><input type="text" placeholder='@xyz#5367$' name='password' value={user.password} onChange={handleInput} /></div>
                         </div>
                         <div className="field">
-                            <div className="input"><label htmlFor="phone">Phone</label><input type="text" placeholder='+91' name='phone' value={user.phone} onChange={handleInput} /></div><div className="input auto-input">
-
+                            <div className="input"><label htmlFor="phone">Phone</label><input type="text" placeholder='+91' name='phone' value={user.phone} onChange={handleInput} /></div><div className="input ">
+                            <label htmlFor="address">Address</label><input type="text" placeholder='LA,USA' name='address' value={user.address} onChange={handleInput} />
                             </div>
                         </div>
 
@@ -107,6 +169,7 @@ const NewDepartment = () => {
                     </div>
                 </form>
             </div>
+            <ToastContainer />
         </>
     );
 }

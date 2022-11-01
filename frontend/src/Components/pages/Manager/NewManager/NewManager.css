@@ -79,10 +79,6 @@ box-shadow: 0 6px 10px -8px rgb(0, 0, 0);
    
 }
 .create-user-wrapper{
-    /* background-color: rgb(61, 103, 134); */
-  
-   
-   
    
     height: 80vh;
     background-color: rgb(255, 255, 255);
@@ -90,6 +86,21 @@ box-shadow: 0 6px 10px -8px rgb(0, 0, 0);
     margin-left: 270px;
     margin-top: 14px;
     width: 79%;
+
+}
+.manager-image-block{
+    /* background-color:aquamarine ; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 2rem;
+    border: none;
+}
+.manager-image img{
+    width: 100px;
+    width: 100px;
+    border-radius: 50px;
 
 }
 .create-user-wrapper h2{

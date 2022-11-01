@@ -30,6 +30,12 @@
 .department-image-wrapper{
     /* background-color: aqua; */
     width: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    display: none;
 }
 .department-image-upload{
     /* background-color: aliceblue; */
@@ -122,6 +128,10 @@ box-shadow: 0 6px 10px -8px rgb(0, 0, 0);
 
 }
 
-
+.create-form-wrapper-dep{
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 4rem;
+}
 
 /* hdfjkdkfhdjfhj */

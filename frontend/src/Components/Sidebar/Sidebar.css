@@ -40,7 +40,7 @@ width: 50%;
 .user-account-sidebar{
     /* background-color: aquamarine; */
     display: flex;
-    margin-top: 15rem;
+    margin-top: 8rem;
     gap: 1rem;
     justify-content: flex-start;
     width: 80%;
@@ -158,6 +158,21 @@ ul{
     color: rgb(107, 107, 107);
     cursor: pointer;
     display: none;
+}
+.logout{
+    /* background-color: aqua; */
+    overflow: hidden;
+
+}
+.logout-btn{
+    /* background-color: blue; */
+}
+.logout-btn button{
+    background-color: black;
+    color: white;
+    padding: .5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
 }
 
 .togle-btn1{

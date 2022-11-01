@@ -53,11 +53,8 @@ export default function Login() {
       }
       else {
 
-
         window.localStorage.setItem("user",JSON.stringify(res));
       
-
-
         toast.success('Logged in Successfully!', {
           position: "top-center",
           autoClose: 2000,
@@ -113,7 +110,6 @@ export default function Login() {
 
                 </div>
                 <div className="forget-pass"><a href="#">forget password? </a></div>
-
 
               </div>
 

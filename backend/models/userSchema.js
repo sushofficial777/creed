@@ -1,10 +1,17 @@
 const mongoose = require('mongoose');
-
+var Schema = mongoose.Schema,
+    ObjectId = Schema.ObjectId;
 
 const userSchema = new mongoose.Schema({
     firstName: {
         type: String,
 
+    },
+    parentId: {
+        type: ObjectId,
+        
+        
+        
     },
     lastName: {
         type: String,
@@ -31,7 +38,7 @@ const userSchema = new mongoose.Schema({
         default:"NON"
       
     },
-    company:{
+    companyName:{
         type:String,
         default:"CREED"
 

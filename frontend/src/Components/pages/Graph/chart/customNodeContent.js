@@ -1,6 +1,6 @@
 import React from "react";
 import { FaBuilding } from "react-icons/fa";
-import "../Graph.css";
+import "../Graph.css"; 
 
 const CustomNodeContent = (props) => {
 
@@ -17,8 +17,8 @@ const CustomNodeContent = (props) => {
                 alt="Profile"
               />
               <div className="node-info">
-                <div className="node-name">{props.data.name}</div>
-                <div className="node-role">{props.data.positionName}</div>
+                <div className="node-name">{props.data.firstName}</div>
+                <div className="node-role">{props.data.role}</div>
                 {props.data.department && (
                   <div className="node-department">
                     <FaBuilding />

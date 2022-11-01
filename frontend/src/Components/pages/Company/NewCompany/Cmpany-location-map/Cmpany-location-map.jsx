@@ -56,7 +56,7 @@ const CityList = props => {
   );
 };
 
-class ShowMap extends Component {
+class   ShowMap extends Component {
   state = {
     selectedItem: { lat: 0, lng: 0 }
   };

@@ -8,7 +8,7 @@ const EmployeeDetailsCard = (props) => {
       <button className="card-close-btn" onClick={props.handleClose}>
         <MdClose />
       </button>
-      {props.employee.team === "" ? (
+      {props.employee.department === "" ? (
         <div>
           <div className="card-header">
             <img
@@ -16,8 +16,8 @@ const EmployeeDetailsCard = (props) => {
               src={props.employee.imageUrl}
               alt="Profile"
             />
-            <h2 className="card-name">{props.employee.name}</h2>
-            <p className="card-role">{props.employee.positionName}</p>
+            <h2 className="card-name">{props.employee.firstName}</h2>
+            <p className="card-role">{props.employee.role}</p>
           </div>
           <div className="card-body">
             <div className="card-item">
@@ -29,8 +29,8 @@ const EmployeeDetailsCard = (props) => {
               <p className="card-item-value">{props.employee.email}</p>
             </div>
             <div className="card-item">
-              <p className="card-item-label">Location:</p>
-              <p className="card-item-value">{props.employee.location}</p>
+              <p className="card-item-label">Company Name:</p>
+              <p className="card-item-value">{props.employee.companyName}</p>
             </div>
             {props.employee.department && (
               <div className="card-item">
@@ -43,32 +43,29 @@ const EmployeeDetailsCard = (props) => {
       ) : (
         <div>
           <div className="card-header">
-            <h2 className="card-team-name">{props.employee.team} Team</h2>
+            <h2 className="card-team-name">{props.employee.department} Team</h2>
           </div>
           <h4>Team Members:</h4>
           <div className="card-body-team-members">
             {props.employees
               .filter(
-                (employee) => employee.parentId === props.employee.id.toString()
+                (employee) => employee.parentId === props.employee._id.toString()
               )
               .map((employee) => (
-                <div className="card-item-team" key={employee.id}>
+                <div className="card-item-team" key={employee._id}>
                   <img
                     className="card-item-img"
                     src={employee.imageUrl}
                     alt="Profile"
                   />
                   <p className="card-item-name">{employee.name}</p>
-                  <p className="card-item-role">{employee.positionName}</p>
+                  <p className="card-item-role">{employee.role}</p>
                 </div>
               ))}
           </div>
         </div>
       )}
-      <div className="card-item">
-        <p className="card-item-label">Description:</p>
-        <p className="card-item-value">{props.employee.description}</p>
-      </div>
+    
     </div>
   );
 };

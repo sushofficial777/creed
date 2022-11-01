@@ -13,8 +13,49 @@ const Widges = ({ type }) => {
   const [manager, setManager] = useState("0");
   const [teamlead, setTeamlead] = useState("0");
   const [employee, setEmployee] = useState("0");
+  const [eemployee, setEemployee] = useState([]);
+// console.log(eemployee.data[0]);
 
-  console.log(manager.data);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  // console.log(employee.data);
+  const fetchee = () => {
+    fetch('/getemployee').then((res) => {
+      // console.log(res);
+      return res.json();
+
+    }).then((managerData) => {
+      const managerCount = managerData;
+      setEemployee(managerCount);
+
+    })
+  }
+
+  
   const fetchManager = () => {
     fetch('/countmanager').then((res) => {
       // console.log(res);
@@ -56,6 +97,7 @@ const Widges = ({ type }) => {
     fetchTeamleader();
     fetchEmployee();
     fetchManager();
+    fetchee()
   }, [])
   //temporary
 

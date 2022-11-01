@@ -1,0 +1,18 @@
+.search-city input{
+    /* background-color: aqua; */
+    padding: .6rem .2rem;
+    width: 97%;
+    border: 2px solid rgb(143, 143, 143);
+
+    
+}
+.autocomplete{
+  
+}
+.search-city{
+    width: 100%;
+}
+.auto-wrapper{
+    width: 100%;
+    /* background-color: blue; */
+}

@@ -1,15 +1,26 @@
 const admin = require('../models/adminSchema');
 const user = require('../models/userSchema');
+const department = require('../models/DepartmentSchema');
+const company = require('../models/companySchema')
 const { sign } = require('jsonwebtoken');
 const md5 = require('md5');
 const localStorage = require('localStorage');
 module.exports = {
+        logout: async (req, res,next) => {
+
+       res.clearCookie('jwt');  
+     
+       res.status(200).send("user sign-out successfull")
+
+        next() 
+    },
 
     userLogin: async (req, res, next) => {
 
         try{
             const { email, password } = req.body;
             const matchPass = md5(password);
+      
          
         const UserData = await user.findOne({ email: email });
      
@@ -50,8 +61,7 @@ module.exports = {
 
     getuserdata: async (req, res, next) => {
 
-        const Data  = await user.find();
-
+        const Data  = await user.find({"role": "CEO" &&  "employee" &&  "Manager" });
         res.status(200).json({
             message:"data found",
             data: Data
@@ -74,7 +84,7 @@ module.exports = {
 
         //////////////////get all teamlead data////////////////////////
 
-        GetTeamleadData: async (req, res, next) => {
+            GetTeamleadData: async (req, res, next) => {
 
             const Data  = await user.find({"role":"teamlead"});
     
@@ -95,10 +105,22 @@ module.exports = {
            })
     
         },
+     
    //////////////////get all deparment data////////////////////////
         GetDepartmentData: async (req, res, next) => {
 
-            const Data  = await user.find();
+            const Data  = await department.find();
+    
+           res.status(200).json({
+            message:"data found",
+            data: Data
+           })
+    
+        },
+         //////////////////get all deparment data////////////////////////
+         GetComponyData: async (req, res, next) => {
+
+            const Data  = await company.find();
     
            res.status(200).json({
             message:"data found",
@@ -160,17 +182,17 @@ module.exports = {
     adduser: async (req, res, next) => {
 
 
-        const { firstName, lastName, email, password, role, companyName,phone, location, image,department } = req.body;
+        const { firstName, lastName, email, password, role, companyName,phone, location, image,department, parentId} = req.body;
 
         const UserData = await user.findOne({ email: email });
        
 
-
+console.log(`god bacha lo ${UserData}`);
         if (UserData ) {
             res.status(400).json({ error: "user already exist" });
         }
 
-        else if (!firstName || !lastName || !email  || !location) {
+        else if (!firstName || !lastName || !email ) {
             res.status(403).json({ error: "all fields are required" });
         }
         else {
@@ -184,6 +206,7 @@ module.exports = {
                 companyName: companyName,
                 role: role,
                 phone:phone,
+                parentId: parentId,
                 location:location,
                 department: department
             }

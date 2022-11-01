@@ -1,5 +1,5 @@
 .employee-wrapper{
-    height: 80vh;
+    height: 90.6vh;
     background-color: rgb(255, 255, 255);
     margin: 0 auto;
     margin-left: 275px;
@@ -7,7 +7,7 @@
     width: 81%;
     display: grid;
     gap: 1rem;
-    grid-template-columns: repeat(2,1fr);
+    grid-template-columns: repeat(1,1fr);
     
 }
 .employee-container{
@@ -17,3 +17,13 @@
     box-shadow: 0 0 10px -3px rgb(159, 159, 159);
     height: 100%;
 }
+.css-1e2bxag-MuiDataGrid-root{
+    color: aqua;
+}
+.MuiDataGrid-columnHeaders{
+    color: rgb(0, 0, 0);
+    font-weight:bold;
+    font-size: 1.2rem;
+
+}
+

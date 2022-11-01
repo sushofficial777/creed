@@ -15,7 +15,7 @@ module.exports = {
    //add company 
     addcompany: async (req,res,next) =>{
 
-        const { firstName, email, lastName, phone, companyName, password, companyLocation, location } = req.body;
+        const { firstName, email, lastName, phone, companyName, password, companyLocation, location_lat, location_lon } = req.body;
            const hashedPass = md5(password);
     
         const UserData = await user.findOne({ email: email });
@@ -26,11 +26,11 @@ module.exports = {
         console.log(`company ${CompanyData}`);
 
 
-        if (!firstName || !email || !lastName || !phone || !companyName || !password || !companyLocation || !location) {
+        if (!firstName || !email || !lastName || !phone || !companyName || !password || !companyLocation) {
             res.status(400).json({error: "all fields are required"});
         }
 
-        else if (CompanyData || CompanyData) {
+        else if (UserData || CompanyData) {
             res.status(401).json({error: "User Allready Exist"});
         }
         else if (verifyCompanyName) {
@@ -44,7 +44,9 @@ module.exports = {
             lastName: lastName,
             phone: phone,
             role:"CEO",
-            location: location,
+           
+            company_location_lat: location_lon,
+            company_location_lon: location_lat,
             companyName:  companyName,
             password:  hashedPass, 
             companyLocation: companyLocation
@@ -61,12 +63,15 @@ module.exports = {
            
            }
 
+
         const data = new companySchema(companyData);
         data.save().then((data) => {
             res.status(201).json({
                 message: "Company data created..",
                 data: data
             })
+
+            
             
             next();
         }).catch(err => {

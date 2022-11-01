@@ -3,8 +3,21 @@ import './NewManager.css'
 import Sidebar from '../../../Sidebar/Sidebar';
 import Menubar from '../../../Menubar/Menubar';
 import { ImCamera } from 'react-icons/im'
+import { useNavigate } from 'react-router-dom';
 
 const NewManager = () => {
+
+      //////get parentId from localStorage
+      const [ parentId, setParentId] = useState(0)
+    
+      useEffect(() => {
+          const getParentId = JSON.parse(localStorage.getItem('user'));
+          const parentId = getParentId._id;
+          setParentId(parentId)
+  
+        
+          }, [])
+    
 
     const [user, setUser] = useState({
         firstName: "", lastName: "", email: "", phone: "", department: "", password: ""
@@ -32,7 +45,7 @@ const NewManager = () => {
                 "Content-Type": "application/json"
             },
             body: JSON.stringify({
-                firstName, lastName, email, phone, department, password
+                firstName, lastName, email, phone, department, password,parentId
             })
 
         })
@@ -44,7 +57,7 @@ const NewManager = () => {
             window.alert("invalid creation")
             console.log("user cannot  created");
         }
-        if (res.status === 422) {
+       else if (res.status === 422) {
             window.alert("email allready exist")
             console.log("email exist already");
         }
@@ -66,8 +79,8 @@ const NewManager = () => {
                 <h2>Add new Manager</h2>
                 <form action="" method='POST' className='create-user-form'>
 
-                    <div className="user-image-wrapper-employee">
-                        {/* <div className="user-image"><img
+                    <div className="user-image-wrapper-employee manager-image-block">
+                      <div className="manager-image"><img
                             src={
                                 file
                                     ? URL.createObjectURL(file)
@@ -79,7 +92,7 @@ const NewManager = () => {
                                 onChange={(e) => setFile(e.target.files[0])} />
                             <label htmlFor="select-image">upload image</label>
 
-                        </div> */}  
+                        </div> 
                     </div>
                     <div className="create-form-wrapper" data-aos='fade-up'>
                         <div className="field">
@@ -98,7 +111,7 @@ const NewManager = () => {
                             <div className="input"><label htmlFor="email">Email</label><input type="text" placeholder='robert@gmail.com' name='email' value={user.email} onChange={handleInput} /></div><div className="input"> <label htmlFor="password">password</label><input type="text" placeholder='r@b#e$' name='password' value={user.password} onChange={handleInput} /></div>
                         </div>
                         <div className="field">
-                            <div className="input"><label htmlFor="phone">phone</label><input type="text" placeholder='+91' name='phone' value={user.phone} onChange={handleInput} /></div><div className="input"><label htmlFor="department">department</label><input type="text" placeholder='department' name='department' value={user.department} onChange={handleInput} /></div>
+                            <div className="input"><label htmlFor="phone">phone</label><input type="text" placeholder='+91' name='phone' value={user.phone} onChange={handleInput} /></div><div className="input"><label htmlFor="department">department</label> </div>
                         </div>
 
                         <div className="field">

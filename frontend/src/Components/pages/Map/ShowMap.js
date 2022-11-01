@@ -5,6 +5,7 @@ import Sidebar from "../../Sidebar/Sidebar";
 
 import "./styles.css";
 
+
 const data = [
   {
     name: "Amazone",

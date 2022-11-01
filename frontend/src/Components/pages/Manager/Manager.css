@@ -1,0 +1,19 @@
+.manager-wrapper{
+    height: 90.6vh;
+    background-color: rgb(255, 255, 255);
+    margin: 0 auto;
+    margin-left: 275px;
+    margin-top: 14px;
+    width: 81%;
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(1,1fr);
+        
+}
+.manager-container{
+    background-color: rgb(255, 255, 255);
+    padding: 1rem;
+    border-radius: 5px;
+    box-shadow: 0 0 10px -3px rgb(159, 159, 159);
+    height: 100%;
+}

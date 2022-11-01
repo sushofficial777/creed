@@ -3,6 +3,7 @@ import React, { useState,useEffect } from 'react';
 import './Employee.css'
 import Sidebar from '../../Sidebar/Sidebar';
 import Menubar from '../../Menubar/Menubar';
+import {Link} from 'react-router-dom'
 import { Box, Typography } from '@mui/material';
 import { DataGrid } from '@mui/x-data-grid'
 import { DndProvider, useDrag, useDrop } from 'react-dnd';
@@ -15,10 +16,12 @@ const Employee = () => {
 
 
     const columns = useMemo(() => [
-        { field: 'role', headerName: 'role', },
-        { field: 'name', headerName: 'name', },
-        { field: 'email', headerName: 'email', },
-        { field: '_id', headerName: 'Id', },
+        { field: '_id', headerName: 'Id',width:100,editable:false },
+        { field: 'firstName', headerName: 'name', width:200 },
+        { field: 'role', headerName: 'role', width:200 },
+     
+        { field: 'email', headerName: 'email',width:200  },
+       
     ], [])
    
 
@@ -51,7 +54,7 @@ console.log(data);
                     <DndProvider backend={HTML5Backend}  >
                         <Box
                             sx={{
-                                height: 540,
+                                height: 620,
                                 width: '100%'
                             }}
                         >
@@ -60,36 +63,12 @@ console.log(data);
                                 component='h3'
                                 sx={{ textAlign: 'center', mt: 3, mb: 3 }}
                             >
-                                 Department1
-                            </Typography>
-                            <DataGrid
-                                columns={columns}
-                                rows={data}
-                                getRowId= {row=>row._id}
-                            />
-
-
-
-
-                        </Box>
-                    </DndProvider>
-                </div>
-
-                <div className="employee-container">
-                    <DndProvider backend={HTML5Backend}  >
-                        <Box
-                            sx={{
-                                height: 540,
-                                width: '100%',
+                               <div className="grid-title">
+                                <h2>Employee Data</h2>
                                 
-                            }}
-                        >
-                            <Typography
-                                variant='h5'
-                                component='h3'
-                                sx={{ textAlign: 'center', mt: 3, mb: 3 }}
-                            >
-                               Department2
+                                <Link to="/admin/Dashboard/employees/new"><button>New Employee</button></Link>
+
+                                </div>
                             </Typography>
                             <DataGrid
                                 columns={columns}
@@ -103,6 +82,9 @@ console.log(data);
                         </Box>
                     </DndProvider>
                 </div>
+
+            
+               
             </div>
         </>
     );

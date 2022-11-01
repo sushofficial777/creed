@@ -1,0 +1,40 @@
+.company-wrapper{
+    height: 90.6vh;
+    background-color: rgb(255, 255, 255);
+    margin: 0 auto;
+    margin-left: 275px;
+    margin-top: 14px;
+    width: 81%;
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(1,1fr);
+        
+}
+.company-container{
+    background-color: rgb(255, 255, 255);
+    padding: 1rem;
+    border-radius: 5px;
+    box-shadow: 0 0 10px -3px rgb(159, 159, 159);
+    height: 100%;
+}
+.grid-title{
+    /* background-color: aqua; */
+    /* width: 100%; */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 .1rem;
+    padding-bottom: .7rem;
+}
+.grid-title button{
+    padding: .6rem .8rem;
+    border-radius: 5px;
+    cursor: pointer;
+    border: 1px solid rgb(85, 85, 85);
+    background-color: rgb(59, 196, 0);
+    color: rgb(255, 255, 255);
+   
+}
+.grid-title h3{
+    color: blue;
+}

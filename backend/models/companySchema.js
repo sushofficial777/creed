@@ -29,7 +29,10 @@ const companySchema = new mongoose.Schema({
    companyLocation:{
    type:String
 },
-location:{
+company_location_lat:{
+    type:String
+},
+company_location_lon:{
     type:String
 }
   

@@ -10,6 +10,7 @@ const dotenv = require('dotenv');
 require('dotenv').config();
 require('./database/db');
 const userRouter = require('./routes/api');
+const { json } = require('body-parser');
 
 
 //api doc with swagger
@@ -27,6 +28,10 @@ app.use(fileupload());
 
 
 app.use('/',userRouter);
+
+
+
+
 
 const PORT = process.env.PORT || 8001;
 app.listen(PORT, ()=>{

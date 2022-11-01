@@ -1,6 +1,7 @@
-import React from 'react';
+import React,{useState, useEffect} from 'react';
 import CmpanyLocationMap from './Cmpany-location-map';
 import AutocompleteLocation from '../../../Autocomplete-location/Autocomplete-location';
+
 import './Cmpany-location-map.css'
 const MapWrapper = () => {
     return (
@@ -9,8 +10,14 @@ const MapWrapper = () => {
                 <div className="map-title">
                     <h3>Select Copmpany Location</h3>
                 </div>
-
+                <div className="autocomplete">
                 <AutocompleteLocation />
+              
+                </div>
+
+              
+            
+
               
 
             </div>
