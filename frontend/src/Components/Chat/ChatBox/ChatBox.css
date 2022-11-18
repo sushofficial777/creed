@@ -1,0 +1,17 @@
+.chat-wrapper{
+    
+    width: 350px;
+    height: 450px;
+    
+    background-color: rgb(255, 255, 255);
+    position: fixed;
+    /* z-index: -1; */
+    left: 87.5%;
+    top: 45%;
+    transform: translate(-50%);
+    border-radius: 10px;
+    box-shadow: 0 0 10px -3px rgb(159, 159, 159);
+    
+    
+
+}

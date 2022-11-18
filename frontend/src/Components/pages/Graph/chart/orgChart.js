@@ -9,7 +9,7 @@ const OrganizationalChart = (props) => {
   const d3Container = useRef(null);
   // console.log(d3Container);
 
-  console.log(props.data[1].id);
+  // console.log(props.data[1].id);
   const [cardShow, setCardShow] = useState(false);
   const [employeeId, setEmployeeId] = useState("");
   // console.log(props.data);   

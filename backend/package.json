@@ -15,7 +15,7 @@
     "cookie-parser": "^1.4.6",
     "cors": "^2.8.5",
     "dotenv": "^16.0.1",
-    "express": "^4.18.1",
+    "express": "^4.18.2",
     "express-fileupload": "^1.4.0",
     "gitignore": "^0.7.0",
     "jsonwebtoken": "^8.5.1",
@@ -26,6 +26,7 @@
     "nodemailer": "^6.7.8",
     "nodemailer-express-handlebars": "^5.0.0",
     "nodemon": "^2.0.19",
+    "socket.io": "^4.5.3",
     "swagger-jsdoc": "^6.2.5",
     "swagger-ui-express": "^4.5.0"
   }

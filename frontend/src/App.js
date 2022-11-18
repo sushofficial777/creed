@@ -23,6 +23,8 @@ import ClipLoader from "react-spinners/ClipLoader";
 import LoginProtection from './Components/loginProtection';
 import Company from './Components/pages/Company/Company';
 import Department from './Components/pages/Department/Department';
+import SelectById from './Components/pages/Byid/selectById';
+import ChatBox from './Components/Chat/ChatBox/ChatBox';
 
 
 const App =() => {
@@ -32,6 +34,7 @@ const App =() => {
   return (
 
 <>
+
 
     <Routes>
 
@@ -54,6 +57,7 @@ const App =() => {
       <Route exact path="/admin/Dashboard/employees/new" element={<ProtectedRoute Component={NewEmployee} />} />
       <Route exact path="/admin/Dashboard/aut" element=<CmpanyLocationMap/> />
       <Route exact path="/admin/Dashboard/map" element={<ProtectedRoute Component={CompanyMap} />} />
+      <Route exact path="/admin/Dashboard/test" element=<SelectById/> />
 
       
       {/* <Route exact path="/admin/Dashboard/user" element={<ProtectedRoute Component={User} />} />
